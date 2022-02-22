@@ -20,7 +20,7 @@ export async function getUserList(request: Request, response: Response) {
 
         const pagination = await getPagination(request);
 
-        console.log("pagination: ", pagination);
+        // console.log("pagination: ", pagination);
 
         const userList = await User.find({},{}, pagination);
 

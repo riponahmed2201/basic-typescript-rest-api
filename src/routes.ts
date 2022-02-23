@@ -3,6 +3,7 @@ import {
   createPostHandler,
   updatePostHandler,
   getPostHandler,
+  getAllPostHandler,
   deletePostHandler,
 } from "./controller/post.controller";
 import { createUserHandler, getUserList } from "./controller/user.controller";
@@ -21,6 +22,8 @@ import {
   updatePostSchema,
   deletePostSchema,
 } from "./schema/post.schema";
+
+import createProductHandler, {getProductHandler} from "./controller/product.controller";
 
 export default function (app: Express) {
   app.get("/healthcheck", (req: Request, res: Response) => res.sendStatus(200));
@@ -63,10 +66,17 @@ export default function (app: Express) {
   // Get a post
   app.get("/api/posts/:postId", getPostHandler);
 
+  // get all post 
+  app.get("/api/posts", getAllPostHandler);
+
   // Delete a post
   app.delete(
     "/api/posts/:postId",
     [requiresUser, validateRequest(deletePostSchema)],
     deletePostHandler
   );
+
+  // create product
+  app.get("/api/products", getProductHandler);
+  app.post("/api/products", createProductHandler);
 }

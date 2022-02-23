@@ -19,10 +19,8 @@ export async function getUserList(request: Request, response: Response) {
     try {
 
         const pagination = await getPagination(request);
-
         // console.log("pagination: ", pagination);
-
-        const userList = await User.find({},{}, pagination);
+        const userList = await User.find({}, {}, pagination);
 
         return response.status(200).json({
             status: "success",

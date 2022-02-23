@@ -1,0 +1,34 @@
+{
+    "data": {
+        "basic": {
+            "subscriptionType": "basic",
+            "fields": [
+                "name",
+                "description"
+            ]
+        },
+        "standard": {
+            "subscriptionType": "standard",
+            "fields": [
+                "name",
+                "supplierPrice",
+                "mrpPrice",
+                "discountedPrice"
+            ]
+        },
+        "premium": {
+            "subscriptionType": "premium",
+            "fields": [
+                "name",
+                "shortDescription",
+                "description",
+                "supplierPrice",
+                "mrpPrice",
+                "discountedPrice",
+                "stockTotal",
+                "categoryName",
+                "code"
+            ]
+        }
+    }
+}

@@ -10,12 +10,23 @@ export function createPost(input: DocumentDefinition<PostDocument>) {
   return Post.create(input);
 }
 
+
+// find single post 
 export function findPost(
   query: FilterQuery<PostDocument>,
   options: QueryOptions = { lean: true }
 ) {
   return Post.findOne(query, {}, options);
 }
+
+// findAllPost
+export function findAllPost(
+  query: FilterQuery<PostDocument>,
+  options: QueryOptions = { lean: true }
+) {
+  return Post.find({}, options);
+}
+
 
 export function findAndUpdate(
   query: FilterQuery<PostDocument>,
